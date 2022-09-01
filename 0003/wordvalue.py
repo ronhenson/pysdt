@@ -33,24 +33,8 @@ def max_word_value(words):
     max_value = 0
     max_word = ""
     for word in words:
-        word_value = sum(LETTER_SCORES.get(letter) for letter in word.upper())
+        word_value = sum(LETTER_SCORES.get(letter, 0) for letter in word.upper())
         max_value = max(max_value, word_value)
         max_word, max_value = ( max_word , max_value ) if word_value < max_value else (word, word_value)
 
     return max_word
-
-
-
-if __name__ == "__main__":
-    words = load_words()
-
-    print(f"{words[0:20]}\n  {words[-20:-1]}")
-
-    print(calc_word_value('bob'))
-    print(calc_word_value('Julian'))
-    print(calc_word_value('PyBites'))
-    print(calc_word_value('benzalphenylhydrazone'))
-
-    test_words = ['bob', 'julian', 'pybites', 'quit', 'barbeque', "baby", "hello"]
-    print(f"max test word: {max_word_value(test_words)}")
-    print(f"max test word: {max_word_value(words[20000:21000])}")
