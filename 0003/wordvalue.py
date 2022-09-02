@@ -23,7 +23,7 @@ def load_words():
 
 def calc_word_value(word):
     """Given a word calculate its value using the LETTER_SCORES dict"""
-    return sum(LETTER_SCORES.get(letter) for letter in word.upper())
+    return sum(LETTER_SCORES.get(letter, 0) for letter in word.upper())
 
 
 
