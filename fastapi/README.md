@@ -33,19 +33,19 @@ Let's break this problem down in some easily digestable steps or Bite exercises:
 
 ## Bites of Py
 
-### 1.1 - FastAPI Hello World ( bite 336 )
-### 1.2 - A little detour: Pydantic Intermediate level icon ( bite 337 )
-### 2.1 - Create food objects
-### 2.2 - Retrieve food objects
-### 2.3 - Update and delete food objects
-### 2.4 - Pydantic part II
-### 2.5 - Food logging CRUD
-### 2.6 - FastAPI Exception handling
-### 2.7 - Return an HTML response
+- [x] 1.1 - FastAPI Hello World ( bite 336 )
+- [x] 1.2 - A little detour: Pydantic Intermediate level icon ( bite 337 )
+- [x] 2.1 - Create food objects (bite 338)
+- [x] 2.2 - Retrieve food objects (bite 339)
+- [ ] 2.3 - Update and delete food objects (bite 340)
+- [ ] 2.4 - Pydantic part II
+- [ ] 2.5 - Food logging CRUD
+- [ ] 2.6 - FastAPI Exception handling
+- [ ] 2.7 - Return an HTML response
 
 ## Advanced level icon
 
-### 3.1 - FastAPI Authentication with JWT (JSON Web Tokens)
+- [ ] 3.1 - FastAPI Authentication with JWT (JSON Web Tokens)
 
 ## FastAPI tutorial
 
