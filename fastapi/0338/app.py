@@ -20,7 +20,7 @@ foods: Dict[int, Food] = {}
 
 
 # write the Create endpoint
-@app.post("/", response_model=foods, status_code=201)
+@app.post("/", status_code=201)
 async def create_foods(food: Food):
     foods[food.id] = food
     return food
