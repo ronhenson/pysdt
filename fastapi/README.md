@@ -33,13 +33,13 @@ Let's break this problem down in some easily digestable steps or Bite exercises:
 
 ## Bites of Py
 
-- [x] 1.1 - FastAPI Hello World ( bite 336 )
-- [x] 1.2 - A little detour: Pydantic Intermediate level icon ( bite 337 )
-- [x] 2.1 - Create food objects (bite 338)
-- [x] 2.2 - Retrieve food objects (bite 339)
-- [ ] 2.3 - Update and delete food objects (bite 340)
-- [ ] 2.4 - Pydantic part II
-- [ ] 2.5 - Food logging CRUD
+- [x] 1.1 - FastAPI Hello World [(bite 336)](https://codechalleng.es/bites/336/)
+- [x] 1.2 - A little detour: Pydantic Intermediate level icon [(bite 337)](https://codechalleng.es/bites/337/)
+- [x] 2.1 - Create food objects [(bite 338)](https://codechalleng.es/bites/338/)
+- [x] 2.2 - Retrieve food objects [(bite 339)](https://codechalleng.es/bites/339/)
+- [x] 2.3 - Update and delete food objects [(bite 340)](https://codechalleng.es/bites/340/)
+- [x] 2.4 - Pydantic part II [(bite 341)](https://codechalleng.es/bites/341/)
+- [ ] 2.5 - Food logging CRUD [(bite 342)](https://codechalleng.es/bites/342/)
 - [ ] 2.6 - FastAPI Exception handling
 - [ ] 2.7 - Return an HTML response
 
