@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any, Dict, List
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from passlib.context import CryptContext
 from pydantic import BaseModel
 
@@ -52,3 +52,36 @@ food_log: Dict[int, FoodEntry] = {}
 # repeat the API building process (deliberate practice is key!)
 
 # Create CRUD endpoints for FoodEntry below as per instructions in the Bite ...
+
+@app.post("/")
+async def create_food_entry(food_entry: FoodEntry):
+    """Add food entry for user"""
+
+    food_log[food_entry.id] = food_entry
+
+
+@app.get("/{user_id}", response_model=List[FoodEntry])
+async def get_foods_for_user(user_id: int):
+    "get food entries for user"
+
+    return [food for food in food_log.values() if food.user.id == user_id]
+
+
+@app.put("/{entry_id}")
+async def update_food_entry(entry_id: int, food_entry: FoodEntry):
+    """Update a food entry"""
+
+    if food_log.get(entry_id) is None:
+        raise HTTPException(status_code=404, detail="Food entry not found")
+    food_log[entry_id] = food_entry
+    return food_entry
+
+
+@app.delete("/{entry_id}")
+async def delete_food_entry(entry_id: int):
+    """Delete food entry"""
+    if food_log.get(entry_id) is None:
+        raise HTTPException(status_code=404, detail="Food entry not found")
+
+    food_log.pop(entry_id)
+    return {"ok" : True}
