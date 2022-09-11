@@ -39,8 +39,8 @@ Let's break this problem down in some easily digestable steps or Bite exercises:
 - [x] 2.2 - Retrieve food objects [(bite 339 - 3x)](https://codechalleng.es/bites/339/)
 - [x] 2.3 - Update and delete food objects [(bite 340 - 3x)](https://codechalleng.es/bites/340/)
 - [x] 2.4 - Pydantic part II [(bite 341 - 3x)](https://codechalleng.es/bites/341/)
-- [ ] 2.5 - Food logging CRUD [(bite 342 - 3x)](https://codechalleng.es/bites/342/)
-- [ ] 2.6 - FastAPI Exception handling
+- [x] 2.5 - Food logging CRUD [(bite 342 - 3x)](https://codechalleng.es/bites/342/)
+- [ ] 2.6 - FastAPI Exception handling [(bite 343 - 3x)](https://codechalleng.es/bites/343/)
 - [ ] 2.7 - Return an HTML response
 
 ## Advanced level icon
