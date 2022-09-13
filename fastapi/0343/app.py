@@ -1,7 +1,7 @@
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any, Dict
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from passlib.context import CryptContext
 from pydantic import BaseModel
 
@@ -58,7 +58,17 @@ food_log: Dict[int, FoodEntry] = {}
 @app.post("/", status_code=201)
 async def create_food_entry(entry: FoodEntry):
 
-    # TODO: add exception handling code here
+    if food_log.get(entry.id):
+        raise HTTPException(status_code=400, detail="Food entry already logged, use an update request" )
+
+    total_calories = entry.total_calories
+    for cal in food_log.values():
+        if cal.user.id == entry.user.id and cal.date_added.date() == entry.date_added.date():
+            total_calories += cal.total_calories
+
+    if entry.user.max_daily_calories < total_calories:
+        raise HTTPException(status_code=400, detail=f"Cannot add more food than daily caloric "
+            f"allowance = {entry.user.max_daily_calories} kcal / day")
 
     food_log[entry.id] = entry
     return entry
