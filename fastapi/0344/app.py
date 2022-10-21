@@ -6,6 +6,8 @@ from fastapi.responses import HTMLResponse
 from passlib.context import CryptContext
 from pydantic import BaseModel
 
+import uvicorn
+
 # https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/
 # We'll export authentication further in a later Bite
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -94,4 +96,12 @@ async def show_foods_for_user(request: Request, username: str):
     # 1. extract foods for user using the food_log dict
     # 2. build up the embedded html string
     # 3. return an HTMLResponse (with the html content and status code 200)
-    pass
+    request = Request(HTML_TEMPLATE, username )
+    for food_entry in food_log.values():
+        if food_entry.user.username == username:
+            print(request)
+    return HTMLResponse(content=request, status_code=200)
+
+
+if __name__ == "__main__":
+    config = uvicorn.Config("main:app", port=5000, log_level="info")
